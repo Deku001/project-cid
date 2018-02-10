@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="showProjets">
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -16,7 +16,7 @@
 
             <tr>
                 <td>{{ $entiteFille->typeEntite->NOM_TYPE }}</td>
-                <td>{{ $entiteFille->NOM}}</td>
+                <td><a href={{route('entite.projets' ,['id' => $entiteFille->ID_ENTITE])}} class="lunchShowProjects">{{ $entiteFille->NOM}} </a><</td>
                 @foreach($entiteFille->entitecomptes as $compte)</td>
                 <td>{{ $compte->profil->LIBELLE }}   </td>
                 @endforeach
@@ -25,3 +25,18 @@
         </tbody>
     </table>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $('.lunchShowProjects').on('click',function(e){
+            e.preventDefault();
+            url = this.getAttribute('href');
+            $("#showProjets").load(url);
+            return false;
+        });
+
+    });
+</script>
