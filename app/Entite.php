@@ -25,7 +25,7 @@ class Entite extends Model
     }
     public function projets()
     {
-        return parent::hasMany(Project::class, "ID_PROJET", "ID_PROJET");
+        return $this::hasMany(Project::class, "ID_PROJET", "ID_PROJET");
     }
 
 }

@@ -43,9 +43,6 @@
                 return false;
             });
 
-
-
-
         });
     </script>
 @endsection

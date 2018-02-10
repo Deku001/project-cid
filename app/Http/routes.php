@@ -19,4 +19,4 @@ Route::post('/login','ComptesController@postLogin');
 Route::get('/f0-1','F01Controller@getEntiteMere');
 Route::get('/f0-1/Entite/{id}/filles', 'F01Controller@getEntitefille')->name('entite.filles');
 
-Route::get('/f0-1/Entite/{id}/projets', 'F01Controller@getProjets')->name('entite.projets');
+Route::get('/f0-1/Entite/{id}/projets', 'F11Controller@getProjets')->name('entite.projets');
