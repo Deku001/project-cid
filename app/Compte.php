@@ -18,6 +18,8 @@ class Compte extends Model implements Authenticatable
     }
 
     public function entites(){
+        //entites belongs to many comptes
+        //depend table pivot, ID_COMPTE : primary key, ID_ENTITE foreign key
         return $this->belongsToMany(Entite::class, 'depend', 'ID_COMPTE', 'ID_ENTITE');
     }
 }

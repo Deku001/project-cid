@@ -33,8 +33,9 @@ class F01Controller extends Controller
     }
 
     public function getProjets($id){
-        $projets = Projet::where("ID_ENTITE" , 114)
+        $projets = Projet::with("degres")->where("ID_ENTITE" , 114)
             ->get();
+
         dd($projets);
     }
 }

@@ -9,9 +9,13 @@ class Projet extends Model
     public $table = "projets";
     public $primaryKey = "ID_PROJET";
     
-    public function Projet(){
-        return $this->belongsToMany(Compte::class, 'depend', 'ID_ENTITE', 'ID_COMPTE')
-            ->where('comptes.ID_COMPTE', Session::get("SESS_compte_id"));
+
+    public function degres(){
+        return $this->belongsToMany(DegresAvance::class, 'en_est_a', 'ID_PROJET', 'ID_DEGRES');
+    }
+
+    public function comptes(){
+        return $this->belongsToMany(Compte::class, 'travaille_sur', 'ID_PROJET', 'ID_COMPTE');
     }
 
 
